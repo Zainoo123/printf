@@ -1,5 +1,8 @@
 #include "main.h"
-
+#include <unistd.h>
+#include <stdio.h>
+#include <stdarg.h>
+#include <unistd.h>
 /**
  * percent - return a %
  * Return: cont

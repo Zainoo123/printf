@@ -1,4 +1,8 @@
 #include "main.h"
+#include <unistd.h>
+#include <stdio.h>
+#include <stdarg.h>
+#include <unistd.h>
 /**
  *character - function that prints character
  *@print: arguments
