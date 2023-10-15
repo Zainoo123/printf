@@ -13,29 +13,37 @@ int _printf(const char *format, ...)
 
 	va_start(print, format);
 
-	while (*format)
+	if (format == NULL)
 	{
-		if (*format == '%')
-		{
-			format++;
-			cont += specifier(format, print);
-			if (*format == '\0')
-			{
-				break;
-			}
-			else if (*format && string_checker("cs%di", *format))
-			{
-				_putchar('%');
-				_putchar(*format);
-				cont += 2;
-			}
-		}
-		else
-		{
-			cont += _putchar(*format);
-		}
-		format++;
+		return (-1);
 	}
+	else
+	{
+		while (*format)
+		{
+			if (*format == '%')
+			{
+				format++;
+				cont += specifier(format, print);
+				if (*format == '\0')
+				{
+					break;
+				}
+				else if (*format && string_checker("cs%di", *format))
+				{
+					_putchar('%');
+					_putchar(*format);
+					cont += 2;
+				}
+			}
+			else
+			{
+				cont += _putchar(*format);
+			}
+			format++;
+		}
+	}
+
 	va_end(print);
 	return (cont);
 }
