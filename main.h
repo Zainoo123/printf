@@ -15,8 +15,8 @@ int number_hundler(int i);
 int specifier(const char *format, va_list print);
 bool string_checker(const char *set, char c);
 int _printf(const char *format, ...);
-int printf_int(va_list args);
-int printf_dec(va_list args);
+int print_int(va_list args);
+int print_dec(va_list args);
 
 #define MY_INT_MIN -2147483647
 #define MY_INT_MAX 2147483647

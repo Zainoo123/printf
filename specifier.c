@@ -22,11 +22,11 @@ int specifier(const char *format, va_list print)
 	}
 	else if (*format == 'd')
 	{
-		return (printf_dec(print));
+		return (print_dec(print));
 	}
 	else if (*format == 'i')
 	{
-		return (printf_int(print));
+		return (print_int(print));
 	}
 	return (0);
 }
