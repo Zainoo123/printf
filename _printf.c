@@ -23,7 +23,11 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			cont += specifier(format, print);
-			if (*format && string_checker("cs%di", *format))
+		if (*format == '\0')
+		{
+			break;
+		}
+			else if (*format && string_checker("cs%di", *format))
 			{
 				_putchar('%');
 				_putchar(*format);
