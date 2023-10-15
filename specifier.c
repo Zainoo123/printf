@@ -20,9 +20,13 @@ int specifier(const char *format, va_list print)
 	{
 		return (percent());
 	}
-	else if (*format == 'd' || *format == 'i')
+	else if (*format == 'd')
 	{
-		return (integer(print));
+		return (printf_dec(print));
+	}
+	else if (*format == 'i')
+	{
+		return (printf_int(print));
 	}
 	return (0);
 }
