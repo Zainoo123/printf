@@ -37,5 +37,5 @@ int _printf(const char *format, ...)
 		format++;
 	}
 	va_end(print);
-	return (cont);
+	return (0);
 }
