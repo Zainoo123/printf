@@ -10,7 +10,7 @@ bool string_checker(const char *set, char c)
 {
 	while (*set)
 	{
-		if (*set == cc)
+		if (*set == c)
 	{
 		return (false);
 	}
