@@ -1,9 +1,5 @@
 #include "main.h"
-#include <unistd.h>
-#include <stdio.h>
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdbool.h>
+
 /**
  * _printf - a printf like function
  * @format: the string
@@ -23,10 +19,10 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			cont += specifier(format, print);
-		if (*format == '\0')
-		{
-			break;
-		}
+			if (*format == '\0')
+			{
+				break;
+			}
 			else if (*format && string_checker("cs%di", *format))
 			{
 				_putchar('%');

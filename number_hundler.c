@@ -1,8 +1,5 @@
 #include "main.h"
-#include <unistd.h>
-#include <stdio.h>
-#include <stdarg.h>
-#include <unistd.h>
+
 /**
  * number_hundler - return the hundler of a number
  * @i: int

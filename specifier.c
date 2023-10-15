@@ -1,8 +1,5 @@
 #include "main.h"
-#include <unistd.h>
-#include <stdio.h>
-#include <stdarg.h>
-#include <unistd.h>
+
 /**
  * specifier - checks for the specifiers and hundles them.
  * @format: the string
