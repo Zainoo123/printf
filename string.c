@@ -13,13 +13,22 @@ int string(va_list print)
 
 	if (string == NULL)
 	{
-		string = "(null)";
-		cont++;
+		const char *null_str = "(null)";
+
+		while (*null_str)
+		{
+			_putchar(*null_str);
+			cont++;
+			null_str++;
+		}
 	}
-	while (*string)
+	else
 	{
-		cont += _putchar(*string);
-		string++;
+		while (*string)
+		{
+			cont += _putchar(*string);
+			string++;
+		}
 	}
 	return (cont);
 }
