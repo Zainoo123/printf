@@ -14,10 +14,24 @@ int string(va_list print)
 
 	const char *string = va_arg(print, const char *);
 
-	while (*string)
+	if (string == NULL)
 	{
-		cont += _putchar(*string);
-		string++;
+		const char *null_str = "(null)";
+
+		while (*null_str)
+		{
+			_putchar(*null_str);
+			cont++;
+			null_str++;
+		}
+	}
+	else
+	{
+		while (*string)
+		{
+			cont += _putchar(*string);
+			string++;
+		}
 	}
 	return (cont);
 }
