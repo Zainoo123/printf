@@ -10,7 +10,13 @@ int number_hundler(int i)
 {
 	int cont = 0;
 
-	if (i < 0)
+	if (i == MY_INT_MIN)
+	{
+		_putchar('-');
+		number_hundler(MY_INT_MAX);
+	}
+
+	else if (i < 0)
 	{
 		_putchar('-');
 		i = -i;
