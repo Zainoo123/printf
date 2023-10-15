@@ -1,90 +1,90 @@
 #include "main.h"
 /**
- * printf_int - prints integer
- * @args: argument to print
- * Return: number of characters printed
+ * print_int - prints %i
+ * @print: print
+ * Return: cont
  */
-int printf_int(va_list args)
+int print_int(va_list print)
 {
-	int n = va_arg(args, int);
-	int num, last = n % 10, digit, exp = 1;
-	int  i = 1;
+	int x = va_arg(print, int);
+	int number, y = x % 10, i, j = 1;
+	int cont = 1;
 
-	n = n / 10;
-	num = n;
+	x = x / 10;
+	number = x;
 
-	if (last < 0)
+	if (y < 0)
 	{
 		_putchar('-');
-		num = -num;
-		n = -n;
-		last = -last;
-		i++;
+		number = -number;
+		x = -x;
+		y = -y;
+		cont++;
 	}
-	if (num > 0)
+	if (number > 0)
 	{
-		while (num / 10 != 0)
+		while (number / 10 != 0)
 		{
-			exp = exp * 10;
-			num = num / 10;
+			j = j * 10;
+			number = number / 10;
 		}
-		num = n;
-		while (exp > 0)
+		number = x;
+		while (j > 0)
 		{
-			digit = num / exp;
-			_putchar(digit + '0');
-			num = num - (digit * exp);
-			exp = exp / 10;
-			i++;
+			i = number / j;
+			_putchar(i + '0');
+			number = number - (i * j);
+			j = j / 10;
+			cont++;
 		}
-		}
-		_putchar(last + '0');
+	}
+	_putchar(y + '0');
 
-		return (i);
+	return (cont);
 }
 
 /**
- * printf_dec - prints decimal
- * @args: argument to print
- * Return: number of characters printed
+ * print_dec - print %d
+ * @print: print
+ * Return: cont
  */
 
-int printf_dec(va_list args)
+int print_dec(va_list print)
 {
-	int n = va_arg(args, int);
-	int num, last = n % 10, digit;
-	int  i = 1;
-	int exp = 1;
+	int x = va_arg(print, int);
+	int number, y = x % 10, i;
+	int cont = 1;
+	int j = 1;
 
-	n = n / 10;
-	num = n;
+	x = x / 10;
+	number = x;
 
-	if (last < 0)
+	if (y < 0)
 	{
 		_putchar('-');
-		num = -num;
-		n = -n;
-		last = -last;
-		i++;
+		number = -number;
+		x = -x;
+		y = -y;
+		cont++;
 	}
-	if (num > 0)
+	if (number > 0)
 	{
-		while (num / 10 != 0)
-	{
-		exp = exp * 10;
-		num = num / 10;
+		while (number / 10 != 0)
+		{
+			j = j * 10;
+			number = number / 10;
+		}
+		number = x;
+		while (j > 0)
+		{
+			i = number / j;
+			_putchar(i + '0');
+			number = number - (i * j);
+			j = j / 10;
+			cont++;
+		}
 	}
-	num = n;
-	while (exp > 0)
-	{
-		digit = num / exp;
-		_putchar(digit + '0');
-		num = num - (digit * exp);
-		exp = exp / 10;
-		i++;
-	}
-	}
-	_putchar(last + '0');
+	_putchar(y + '0');
 
-	return (i);
+	return (cont);
 }
