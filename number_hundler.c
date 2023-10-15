@@ -34,7 +34,7 @@ int number_hundler(int i)
 	else if (i >= 10)
 	{
 		number_hundler(i / 10);
-		number_hundler(i % 10);
+		_putchar(i % 10 + '0');
 	}
 	return (cont);
 }
